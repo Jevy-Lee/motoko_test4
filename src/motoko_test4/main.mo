@@ -22,8 +22,6 @@ actor {
     stable var followed : List.List<Principal> = List.nil();
 
     public shared func follow(id:Principal) : async () {
-        //TEST
-        //assert(Principal.toText(msg.caller) == "2bvgb-udj2c-iikgg-hputo-cu5af-fiu7v-3gpsi-p5e5e-l4ucs-ptatd-uqe");
         followed := List.push(id,followed)
     };
 
@@ -34,7 +32,7 @@ actor {
     stable var messages : List.List<Message> = List.nil();
 
     public shared (msg) func post(str:Text) : async () {
-        assert(Principal.toText(msg.caller) == "2bvgb-udj2c-iikgg-hputo-cu5af-fiu7v-3gpsi-p5e5e-l4ucs-ptatd-uqe");
+        assert(Principal.toText(msg.caller) == "c3yh4-m4xl4-2wjch-hwwhe-iaui7-tsl4g-xdjp5-iludb-4xntg-z7wak-rqe");
         let now = Time.now();
         let m = {
             text=str;
